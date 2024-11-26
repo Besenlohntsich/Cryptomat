@@ -64,7 +64,7 @@ public class Vigenere extends Kryptomat{
 
         kt = result;
     }
-
+/*
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -137,4 +137,6 @@ public class Vigenere extends Kryptomat{
         sc.close();
         //beendung des Programms
     }
+
+ */
 }

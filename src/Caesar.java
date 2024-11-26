@@ -52,6 +52,7 @@ public class Caesar extends Kryptomat
 
         kt = result;
     }
+    /*
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Caesar caesar = new Caesar();
@@ -110,5 +111,7 @@ public class Caesar extends Kryptomat
         //ruft alles unter dem do wieder auf, wenn option ungleich 0 ist
         sc.close();
     }
+ */
+
 }
 
