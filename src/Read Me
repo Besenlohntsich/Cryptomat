@@ -1,0 +1,12 @@
+Ceasar
+
+Zuerst wird dem Nutzte das Overlay gezeigt. In diesem kann der nutzer zwischen dem verschlüsseln
+und entschlüsseln wählen.
+Nach dem die Wahl getroffen wurde werden nun die Nachricht ,welche verwendet wird durch den nutzer
+gesetzt und daraufhin der schlüssel.
+Das Overlay ruft dann Die Methode verschluesseln() auf und verschlüsselt den Klartext (kt) unter
+Verwendung des Schlüssels (s) nach der Caesar-Methode und speichert das Ergebnis im geheimen Text (gt).
+Dabei werden alle buchstaben in großbuchstaben verwandelt und auch nur diese verschlüsselt.
+Also werden Zeichen und zahlen ignoriert
+Der GT wird dann ausgegeben.
+
