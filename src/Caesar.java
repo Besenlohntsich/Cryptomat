@@ -30,6 +30,7 @@ public class Caesar extends Kryptomat
         }
 
         gt = Zwischenergebniss;
+        //geheimtext wird gleich dem Zwischenergebniss gesetzt
     }
 
 
