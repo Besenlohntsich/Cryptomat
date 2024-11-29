@@ -5,8 +5,8 @@ public abstract class Kryptomat {
 
     protected String gt; // verschlüsselter Text
     protected String kt; // Klartext
-    protected int s;
-    protected String S;
+    protected int s; // zahlenschlüssel
+    protected String S; //Buchstabenschlüssel
     /**
      * Der Konstruktor initialisiert den Klartext und Geheimtext mit leeren Strings
      * und den Schlüssel mit 0.
