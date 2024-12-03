@@ -12,7 +12,7 @@ public class Polybius extends Kryptomat {
      * Initialisiert das Polybius-Quadrat und füllt es mit Buchstaben.
      */
     public Polybius() {
-        quadrat = new char[5][5];
+        quadrat = new char[6][6];
         initialisiereQuadrat();
     }
 
@@ -25,20 +25,42 @@ public class Polybius extends Kryptomat {
     private void initialisiereQuadrat() {
         String alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ"; //  I und J sind zusammengefasst
         int index = 0;
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
+        for (int i = 1; i < 6; i++) {
+            for (int j = 1; j < 6; j++) {
                 quadrat[i][j] = alphabet.charAt(index++);
             }
         }
     }
 
-
-    public void verschluesseln() {
+    /**
+     * Verschlüsselt den Klartext nach der Polybius-Methode.
+     * Jeder Buchstabe wird durch seine Position im Quadrat (Zeile und Spalte) ersetzt.
+     */
+    public void verschluesseln()
+    {
+        String ergebnis = "";
+        for (int l = 0; l < kt.length(); l++) {
+            char c = Character.toUpperCase(kt.charAt(l));
+            if (Character.isLetter(c)) {
+                if (c == 'J') c = 'I'; // J wird als I behandelt
+                for (int i = 1; i < 6; i++) {
+                    for (int j = 1; j < 6; j++) {
+                        if (quadrat[i][j] == c) {
+                            ergebnis += i*10 + j;
+                            break;
+                        }
+                    }
+                }
+            } else {
+                ergebnis += c;
+            }
+        }
+        gt = ergebnis;
 
     }
-
-
-    public void entschluesseln() {
-
+        public void entschluesseln() {
+            String ergebnis = "";
+kt = ergebnis;
+        }
     }
-}
+
