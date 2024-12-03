@@ -9,12 +9,15 @@ public class Verwaltung {
         Caesar caesar = new Caesar();
         int option;
 
+        //wähle einer der verschlüsselungsmethoden
         do {
             System.out.println("Wähle eine Verschlüsselungsmethode:");
             System.out.println("1 - Vigenere Verschlüsselung");
             System.out.println("2 - Caesar Verschlüsselung");
+            System.out.println("3 - Polybius Verschlüsselung");
             System.out.println("0 - Beenden");
 
+            // Eingabe einer gültigen Option wird abgefangen (muss nicht genutzt werden)
             while (true) {
                 try {
                     option = sc.nextInt();
@@ -101,6 +104,14 @@ public class Verwaltung {
                 System.out.println("Ungültige Option, zurück zum Hauptmenü.");
         }
     }
+
+
+    /**
+     * Die methoden sorgen dafür, dass ein falscher datentyp als eingabe nicht zum crash des programms führt
+     * dabei wird erst versucht den input zu nutzen, wenn dieser eine InputMismatchException ist, dann wird
+     * dieser abgefangen und man wird aufgefordert den korrekten datentyp zu nutzen.
+     *
+     */
 
     private static int getValidOption(Scanner sc) {
         while (true) {
