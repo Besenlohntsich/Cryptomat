@@ -5,6 +5,7 @@ public class Verwaltung {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        Polybius polybius = new Polybius();
         Vigenere vigenere = new Vigenere();
         Caesar caesar = new Caesar();
         int option;
@@ -39,12 +40,42 @@ public class Verwaltung {
                 case 2:
                     nutzeCaesar(sc, caesar);
                     break;
+                    case 3:nutzePolybius(sc, polybius);
                 default:
                     System.out.println("Ungültige Option, bitte wähle erneut.");
             }
         } while (option != 0);
 
         sc.close();
+    }
+
+    private static void nutzePolybius(Scanner sc, Polybius polybius) {
+        System.out.println("Vigenere Verschlüsselung");
+        System.out.println("1 - Verschlüsseln");
+        System.out.println("2 - Entschlüsseln");
+
+        int subOption = getValidOption(sc);
+
+        switch (subOption) {
+            case 1:
+                System.out.println("Gebe eine Nachricht zum Verschlüsseln ein:");
+                polybius.setKt(sc.nextLine());
+                System.out.print("Gebe den Schlüssel ein:");
+                polybius.setS(sc.nextLine());
+                polybius.verschluesseln();
+                System.out.println("Verschlüsselte Nachricht: " + polybius.getGt());
+                break;
+            case 2:
+                System.out.println("Gebe die verschlüsselte Nachricht ein:");
+                polybius.setGt(sc.nextLine());
+                System.out.print("Gebe den Buchstaben Schlüssel ein:");
+                polybius.setS(sc.nextLine());
+                polybius.entschluesseln();
+                System.out.println("Entschlüsselte Nachricht: " + polybius.getKt());
+                break;
+            default:
+                System.out.println("Ungültige Option, zurück zum Hauptmenü.");
+        }
     }
 
     private static void nutzeVigenere(Scanner sc, Vigenere vigenere) {
