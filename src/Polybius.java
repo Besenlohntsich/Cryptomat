@@ -45,8 +45,8 @@ public class Polybius extends Kryptomat {
                 if (c == 'J') c = 'I'; // J wird als I behandelt
                 for (int i = 1; i < 6; i++) {
                     for (int j = 1; j < 6; j++) {
-                        if (quadrat[i][j] == c) {
-                            ergebnis += i*10 + j;
+                        if (quadrat[i][j] == c) {   //wenn der buchstabe im quadrat gleich c ist dann speichert man die koordinate
+                            ergebnis += i*10 + j; // i wird mal 10 genommen damit die zahlen dem koordinaten entsprechen
                             break;
                         }
                     }
