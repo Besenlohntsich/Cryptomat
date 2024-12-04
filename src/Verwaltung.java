@@ -149,7 +149,7 @@ public class Verwaltung {
                 sc.nextLine();
                 return option;
             } catch (InputMismatchException e) {
-                System.out.println("Ungültige Eingabe. Bitte eine Zahl eingeben.");
+                System.out.println("");
                 sc.next();
             }
         }
@@ -160,7 +160,7 @@ public class Verwaltung {
             try {
                 return sc.nextInt();
             } catch (InputMismatchException e) {
-                System.out.println("Ungültige Eingabe. Bitte eine Zahl eingeben.");
+                System.out.println("");
                 sc.next();
             }
         }
