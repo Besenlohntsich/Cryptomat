@@ -75,7 +75,7 @@ public class Polybius extends Kryptomat {
                 } else {   //wenn die bedingung nicht erfüllt wird, übernehme das Zeichen einfach
                     ergebnis += gt.charAt(l);
                 }
-
+             //test
             }
 
 
