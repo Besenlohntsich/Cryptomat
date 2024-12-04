@@ -12,7 +12,7 @@ public class Polybius extends Kryptomat {
      * Initialisiert das Polybius-Quadrat und füllt es mit Buchstaben.
      */
     public Polybius() {
-        quadrat = new char[6][6];
+        quadrat = new char[5][5];
         initialisiereQuadrat();
     }
 
@@ -59,7 +59,7 @@ public class Polybius extends Kryptomat {
     }
 
     public void entschluesseln() {
-        //wir brauen immer 2 zahlen als schlüssel und wenn die zahl gleich einer kombo im array dann hänge den buchstaben ans ergebniss
+
 
 
         String ergebnis = "";
@@ -69,9 +69,10 @@ public class Polybius extends Kryptomat {
                 int i = gt.charAt(l) - '1'; //der wert i wird = der z.b. ersten zahl gestzt und minus 1 damit es bei 0 beginnt
                 int j = gt.charAt(l + 1) - '1'; //der wert j wird = der z.b. zweiten zahl gestzt und minus 1 damit es bei 0 beginnt
 
-                if (i >= 0 && i < 5 && j >= 0 && j < 5) {
+                if (i >= 0 && i < 5 && j >= 0 && j < 5) //wenn i und j im quadrat liegen
+                {
+                    ergebnis += quadrat[i][j]; //übernehme den Buchstaben an der Koordinate
 
-                    ergebnis += quadrat[i][j];
                 } else {   //wenn die bedingung nicht erfüllt wird, übernehme das Zeichen einfach
                     ergebnis += gt.charAt(l);
                 }
