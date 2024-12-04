@@ -67,17 +67,21 @@ public class Polybius extends Kryptomat {
 
 
         String ergebnis = "";
-        for (int l = 0; l < gt.length(); l++)
+        for (int l = 0; l < gt.length(); l+=2) //+2 überspringt eine Zahl da wir immer 2 gleichzeitig nutzen
         {
-            for (int i = 0; i < 5; i++)
-            {
-                for (int j = 0; j < 5; j++)
-                {
-                  if (int p = quadrat[i][j])
-                  {
+            if (l + 1 < gt.length()) { //wenn es mehr als 2 zeichen gibt dann kann man entschlüssel, da wir ja 2 zahlen brauchen
+            int i = gt.charAt(l) - '1'; //der wert i wird = der z.b. ersten zahl gestzt und minus 1 damit es bei 0 beginnt
+            int j = gt.charAt(l + 1) - '1'; //der wert j wird = der z.b. zweiten zahl gestzt und minus 1 damit es bei 0 beginnt
 
-                  }
+                if (i >= 0 && i < 5 && j >= 0 && j < 5) {
+                    //
+                    ergebnis += quadrat[i][j];
+                } else {
+                    ergebnis += gt.substring(l, l + 2);
                 }
+            } else {
+                ergebnis += gt.charAt(l);
+            }
 
             }
 
@@ -86,4 +90,4 @@ public class Polybius extends Kryptomat {
 
         }
     }
-}
+

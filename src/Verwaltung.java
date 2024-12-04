@@ -67,8 +67,7 @@ public class Verwaltung {
             case 2:
                 System.out.println("Gebe die verschlüsselte Nachricht ein:");
                 polybius.setGt(sc.nextLine());
-                System.out.print("Gebe den Buchstaben Schlüssel ein:");
-                polybius.setS(sc.nextLine());
+                
                 polybius.entschluesseln();
                 System.out.println("Entschlüsselte Nachricht: " + polybius.getKt());
                 break;
