@@ -59,23 +59,32 @@ public class Polybius extends Kryptomat {
     }
 
     public void entschluesseln() {
-        //wir brauen immer 2 zahlen als schlüssel und wenn die zahl gleich einer kombo im array dann hänge den buchstaben ans ergebniss
+
 
 
         String ergebnis = "";
-        for (int l = 0; l < gt.length(); l += 2) //+2 überspringt eine Zahl da wir immer 2 gleichzeitig nutzen
+        for (int l = 0; l < gt.length(); l ++) //geht durch den kt array
         {
-            if (l + 1 < gt.length()) { //wenn es mehr als 2 zeichen gibt dann kann man entschlüssel, da wir ja 2 zahlen brauchen
-                int i = gt.charAt(l) - '1'; //der wert i wird = der z.b. ersten zahl gestzt und minus 1 damit es bei 0 beginnt
-                int j = gt.charAt(l + 1) - '1'; //der wert j wird = der z.b. zweiten zahl gestzt und minus 1 damit es bei 0 beginnt
+            if (Character.isDigit(gt.charAt(l))) {
+                if (l + 1 < gt.length()) { //wenn es mehr als 2 zeichen gibt dann kann man entschlüssel, da wir ja 2 zahlen brauchen
+                    int i = gt.charAt(l) - '1'; //der wert i wird = der z.b. ersten zahl gestzt und minus 1 damit es bei 0 beginnt
+                    int j = gt.charAt(l + 1) - '1'; //der wert j wird = der z.b. zweiten zahl gestzt und minus 1 damit es bei 0 beginnt
 
-                if (i >= 0 && i < 5 && j >= 0 && j < 5) {
+                    if (i >= 0 && i < 5 && j >= 0 && j < 5) //wenn i und j im quadrat liegen
+                    {
+                        ergebnis += quadrat[i][j]; //übernehme den Buchstaben an der Koordinate
 
-                    ergebnis += quadrat[i][j];
-                } else {   //wenn die bedingung nicht erfüllt wird, übernehme das Zeichen einfach
-                    ergebnis += gt.charAt(l);
+                    } else {   //wenn die bedingung nicht erfüllt wird, übernehme die Zeichen einfach
+                        ergebnis += gt.charAt(l);
+                        ergebnis += gt.charAt(l+1);
+                    }
+                    l++; // sorgt dafür das wir eine zahl überspringen da wir immer paare von zahlen nutzen
+
                 }
-             //test
+            } else {
+                ergebnis += gt.charAt(l);
+                //übernimmt da zeichen einfach, wenn es keine zahl ist, dadurch werden
+                // leerzeichen nicht mehr zu einem problem weil normalerweise die paare durcheinander geraten
             }
 
 
@@ -83,5 +92,6 @@ public class Polybius extends Kryptomat {
 
         }
     }
+
 }
 
