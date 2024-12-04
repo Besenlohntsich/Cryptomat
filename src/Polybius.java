@@ -65,15 +65,25 @@ public class Polybius extends Kryptomat {
     public void entschluesseln() {
        //wir brauen immer 2 zahlen als schlüssel und wenn die zahl gleich einer kombo im array dann hänge den buchstaben ans ergebniss
 
-      /*
-        String ergebnis = "";
-        for (int i = 0; l < gt.length(); l++)
-        {
 
+        String ergebnis = "";
+        for (int l = 0; l < gt.length(); l++)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                  if (int p = quadrat[i][j])
+                  {
+
+                  }
+                }
+
+            }
 
 
             kt = ergebnis;
+
         }
-        */
     }
 }
