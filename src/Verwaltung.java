@@ -60,8 +60,7 @@ public class Verwaltung {
             case 1:
                 System.out.println("Gebe eine Nachricht zum Verschlüsseln ein:");
                 polybius.setKt(sc.nextLine());
-                System.out.print("Gebe den Schlüssel ein:");
-                polybius.setS(sc.nextLine());
+
                 polybius.verschluesseln();
                 System.out.println("Verschlüsselte Nachricht: " + polybius.getGt());
                 break;
