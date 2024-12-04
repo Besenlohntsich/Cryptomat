@@ -84,7 +84,7 @@ public class Polybius extends Kryptomat {
             } else {
                 ergebnis += gt.charAt(l);
                 //übernimmt da zeichen einfach, wenn es keine zahl ist, dadurch werden
-                // leerzeichen nicht mehr zu einem problem weil normalerweise die paare durcheinander geraten
+                // leerzeichen nicht mehr zu einem problem, weil normalerweise die paare durcheinander geraten
             }
 
 
