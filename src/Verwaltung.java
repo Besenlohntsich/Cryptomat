@@ -8,6 +8,7 @@ public class Verwaltung {
         Polybius polybius = new Polybius();
         Vigenere vigenere = new Vigenere();
         Caesar caesar = new Caesar();
+        Dual dual = new Dual();
         int option;
 
         //wähle einer der verschlüsselungsmethoden
@@ -16,6 +17,7 @@ public class Verwaltung {
             System.out.println("1 - Vigenere Verschlüsselung");
             System.out.println("2 - Caesar Verschlüsselung");
             System.out.println("3 - Polybius Verschlüsselung");
+            System.out.println("4 - Dualverschlüsselung");
             System.out.println("0 - Beenden");
 
             // Eingabe einer gültigen Option wird abgefangen (muss nicht genutzt werden)
@@ -41,12 +43,43 @@ public class Verwaltung {
                     nutzeCaesar(sc, caesar);
                     break;
                     case 3:nutzePolybius(sc, polybius);
+
+                     case 4:nutzeDual(sc, dual);
                 default:
                     System.out.println("Ungültige Option, bitte wähle erneut.");
             }
         } while (option != 0);
 
         sc.close();
+    }
+
+    private static void nutzeDual(Scanner sc, Dual dual) {
+        System.out.println("Dual Verschlüsselung");
+        System.out.println("1 - Verschlüsseln");
+        System.out.println("2 - Entschlüsseln");
+
+        int subOption = getValidOption(sc);
+
+        switch (subOption) {
+            case 1:
+                System.out.println("Gebe eine Nachricht zum Verschlüsseln ein:");
+                dual.setKt(sc.nextLine());
+                System.out.print("Gebe den Zahlenschlüssel ein:");
+                dual.setS(getValidIntegerInput(sc));
+                dual.verschluesseln();
+                System.out.println("Verschlüsselte Nachricht: " + dual.getGt());
+                break;
+            case 2:
+                System.out.println("Gebe die verschlüsselte Nachricht ein:");
+                dual.setGt(sc.nextLine());
+                System.out.print("Gebe den Zahlenschlüssel ein:");
+                dual.setS(getValidIntegerInput(sc));
+                dual.entschluesseln();
+                System.out.println("Entschlüsselte Nachricht: " + dual.getKt());
+                break;
+            default:
+                System.out.println("Ungültige Option, zurück zum Hauptmenü.");
+        }
     }
 
     private static void nutzePolybius(Scanner sc, Polybius polybius) {
